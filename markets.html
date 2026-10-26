@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Upcoming Markets | My Crochet Corner</title>
+
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+
+        <div id="navbar-placeholder"></div>    
+
+        <div class="container my-5">
+
+            <div class="text-center mb-4">
+
+                <img src="profile.JPG"
+                    class="img-fluid rounded shadow-sm mb-3"
+                    alt="Crochet Corner logo"
+                    width="50">
+
+                <h1>
+                    Markets
+                </h1>
+
+                <div id="all-markets" style="display:none;">
+
+                    <div class="market-card" data-date="2026-09-26">
+                        <h3>📅 26 September 2026</h3>
+                        <p>Love'n'Grace Autumn Craft Market</p>
+                    </div>
+
+                    <div class="market-card" data-date="2026-10-16">
+                        <h3>📅 16 October 2026</h3>
+                        <p>Love'n'Grace Halloween Craft Market</p>
+                    </div>
+
+                    <div class="market-card" data-date="2026-11-27">
+                        <h3>📅 27 November 2026</h3>
+                        <p>HCC Christmas Market</p>
+                    </div>
+
+                    <div class="market-card" data-date="2026-11-29">
+                        <h3>📅 29 November 2026</h3>
+                        <p>Christmas Crafter's Market</p>
+                    </div>
+
+                    <div class="market-card" data-date="2026-12-03">
+                        <h3>📅 3 December 2026</h3>
+                        <p>BPS Christmas Fair</p>
+                    </div>
+
+                </div>
+
+                <div class="row mt-4">
+
+                    <div class="col-lg-4">
+
+                        <div class="card h-100">
+
+                            <div class="card-body">
+
+                                <h2>Upcoming Markets</h2>
+
+                                <div id="upcoming-markets"
+                                    class="markets-container">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        <div class="card h-100">
+
+                            <div class="card-body">
+
+                                <h2>Past Events</h2>
+
+                                <div id="past-markets"
+                                    class="markets-container">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        <div class="card h-100">
+
+                            <div class="card-body">
+
+                                <h2>Contact Me</h2>
+
+                                <form
+                                    id="contact-form" 
+                                    autocomplete="on"
+                                    class="text-start"
+                                    action="https://formsubmit.co/Mariza.Whitehouse@student.shu.ac.uk"
+                                    method="POST">
+
+                                    <div class="mb-3">
+
+                                        <label for="name" class="form-label">
+                                            Name:
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="name"
+                                            name="Name"
+                                            minlength="2"
+                                            required>
+
+                                    </div>
+
+                                    <div class="mb-3">
+
+                                        <label class="form-label">
+                                            Preferred Contact Method:
+                                        </label>
+
+                                        <div class="form-check">
+
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="contact_method"
+                                                id="facebook-radio"
+                                                value="Facebook"
+                                                required>
+
+                                            <label
+                                                class="form-check-label"
+                                                for="facebook-radio">
+
+                                                Facebook
+
+                                            </label>
+
+                                        </div>
+
+                                        <div class="form-check">
+
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="contact_method"
+                                                id="instagram-radio"
+                                                value="Instagram">
+
+                                            <label
+                                                class="form-check-label"
+                                                for="instagram-radio">
+
+                                                Instagram
+
+                                            </label>
+
+                                        </div>
+
+                                        <div class="form-check">
+
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="contact_method"
+                                                id="email-radio"
+                                                value="Email">
+
+                                            <label
+                                                class="form-check-label"
+                                                for="email-radio">
+
+                                                Email
+
+                                            </label>
+
+                                        </div>
+
+                                        <div class="form-check">
+
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="contact_method"
+                                                id="text-radio"
+                                                value="Mobile">
+
+                                            <label
+                                                class="form-check-label"
+                                                for="text-radio">
+
+                                                Mobile
+
+                                            </label>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="facebook-field contact-field d-none mb-3">
+
+                                        <label for="facebook-name"
+                                            class="form-label">
+
+                                            Facebook Name
+
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="facebook-name"
+                                            name="Facebook Name"
+                                            placeholder="Facebook Name">
+
+                                    </div>
+
+                                    <div class="instagram-field contact-field d-none mb-3">
+
+                                        <label for="instagram"
+                                            class="form-label">
+
+                                            Instagram
+
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="instagram"
+                                            name="Instagram Handle"
+                                            placeholder="@username">
+
+                                    </div>
+
+                                    <div class="email-field contact-field d-none mb-3">
+
+                                        <label for="email-address"
+                                            class="form-label">
+
+                                            Email
+
+                                        </label>
+
+                                        <input
+                                            type="email"
+                                            class="form-control"
+                                            id="email-address"
+                                            name="Email"
+                                            placeholder="name@example.com">
+
+                                    </div>
+
+                                    <div class="phone-field contact-field d-none mb-3">
+
+                                        <label for="phone"
+                                            class="form-label">
+
+                                            Mobile
+
+                                        </label>
+
+                                        <input
+                                            type="tel"
+                                            class="form-control"
+                                            id="phone"
+                                            name="Mobile"
+                                            placeholder="07123456789">
+
+                                    </div>
+
+                                    <div class="mb-3">
+
+                                        <label
+                                            for="contact-reason"
+                                            class="form-label">
+
+                                            Reason for Contact:
+
+                                        </label>
+
+                                        <select
+                                            class="form-select"
+                                            id="contact-reason"
+                                            name="Contact Reason"
+                                            required>
+
+                                            <option value="">
+                                                Please select
+                                            </option>
+
+                                            <option value="comments">
+                                                Comments
+                                            </option>
+
+                                            <option value="question">
+                                                Ask a Question
+                                            </option>
+
+                                            <option value="commission">
+                                                Commission Request
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                    <div class="mb-3">
+
+                                        <label
+                                            for="message"
+                                            class="form-label">
+
+                                            Message:
+
+                                        </label>
+
+                                        <textarea
+                                            class="form-control"
+                                            id="message"
+                                            name="Message"
+                                            rows="5"
+                                            minlength="10"
+                                            required></textarea>
+
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary">
+
+                                        Submit
+
+                                    </button>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+        </div>
+
+        <script>
+
+            document.addEventListener("DOMContentLoaded", function() {
+
+                const today = new Date();
+
+                // Ignore time when comparing dates
+                today.setHours(0, 0, 0, 0);
+
+                const cards = document.querySelectorAll("#all-markets .market-card");
+
+                const upcomingContainer =
+                    document.getElementById("upcoming-markets");
+
+                const pastContainer =
+                    document.getElementById("past-markets");
+
+                cards.forEach(card => {
+
+                    const eventDate =
+                        new Date(card.dataset.date);
+
+                    if (eventDate < today) {
+                        card.classList.add("past-market");
+                        pastContainer.appendChild(card);
+                    } else {
+                        upcomingContainer.appendChild(card);
+                    }
+
+                });
+
+            });
+
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+
+                const radios =
+                    document.querySelectorAll('input[name="contact_method"]');
+
+                const fields = {
+                    "facebook-radio":
+                        document.querySelector(".facebook-field"),
+
+                    "instagram-radio":
+                        document.querySelector(".instagram-field"),
+
+                    "email-radio":
+                        document.querySelector(".email-field"),
+
+                    "text-radio":
+                        document.querySelector(".phone-field")
+                };
+
+                const inputs = {
+                    "facebook-radio":
+                        document.getElementById("facebook-name"),
+
+                    "instagram-radio":
+                        document.getElementById("instagram"),
+
+                    "email-radio":
+                        document.getElementById("email-address"),
+
+                    "text-radio":
+                        document.getElementById("phone")
+                };
+
+                function hideAllFields() {
+
+                    Object.values(fields).forEach(field => {
+
+                        field.classList.add("d-none");
+
+                    });
+
+                    Object.values(inputs).forEach(input => {
+
+                        input.required = false;
+
+                    });
+
+                }
+
+                function showSelectedField(selectedId) {
+
+                    hideAllFields();
+
+                    fields[selectedId].classList.remove("d-none");
+
+                    inputs[selectedId].required = true;
+
+                }
+
+                radios.forEach(radio => {
+
+                    radio.addEventListener("change", function () {
+
+                        showSelectedField(this.id);
+
+                    });
+
+                });
+
+                hideAllFields();
+
+            });
+        </script>
+
+        <div
+            id="success-message"
+            class="alert alert-success d-none"
+            role="alert">
+
+            Thank you for submitting your form.
+            I will aim to respond within 3–4 days.
+
+        </div>
+
+        <script>
+            document.getElementById("contact-form").addEventListener("submit", function () {
+
+        document
+            .getElementById("success-message")
+            .classList.remove("d-none");
+
+            });
+        </script>
+
+        <div class="text-center mt-4">
+
+                <a href="index.html"
+                    class="btn home-button">
+
+                    Home
+
+                </a>
+
+            </div>                                                      
+
+        </div>
+    
+        <div class="mt-5 p-4 crochet-footer text-center">
+            <p>knotsoinnocent25 | Crocheting for the public since 2025</p>
+        </div>
+
+        <script src="to-top-btn.js"></script>
+        <script src="navbar.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+
+</html>

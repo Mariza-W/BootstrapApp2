@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Learning Crochet | My Crochet Corner</title>
+
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+
+        <div id="navbar-placeholder"></div>    
+
+        <div class="container my-5">
+
+            <div class="text-center mb-4">
+
+                <img src="profile.JPG"
+                    class="img-fluid rounded shadow-sm mb-3"
+                    alt="Crochet Corner logo"
+                    width="50">
+
+                <h1>
+                    How can I learn to crochet? 🧶
+                </h1>
+
+                <p>
+                    Learning to crochet can seem a little overwhelming at first, but the key is to start with the basics and practise regularly. 
+                    Begin by learning how to hold your hook 🪝and wool🧶, then focus on a few fundamental stitches, 
+                    such as the chain stitch ⛓️, single crochet, and double crochet. 
+                    Don't worry if your first attempts are uneven; every crocheter starts somewhere! 🌱
+                </p>
+
+                <p>
+                    📺 Video tutorials are a fantastic way to learn because you can follow along at your own pace.  🐌➡️🏆
+                    I recommend checking out the beginner-friendly tutorials from Bella Coco Crochet on YouTube. 
+                    Once you've mastered the basics, try a simple project like a coaster, scarf 🧣, or small plushie 🧸 to build your confidence.
+                    As your skills grow 📈, you can move on to larger projects such as blankets 🛏️, cushions 🛋️, cardigans 👚, and adorable amigurumi characters. 🧸 
+                    Remember, crochet is a skill that improves with patience, practice, and a willingness to learn from mistakes. 🌟
+                </p>
+
+                <h2>Colour Inspiration</h2>
+
+                <p>
+                    Choose a colour and discover its name and matching colour scheme for your next crochet project.
+                </p>
+
+                <div class="colour-tool">
+
+                    <div class="colour-picker-row">
+                        <label for="colour-picker" style="color:#894bb8; font-size:1.2rem; font-weight:bold;">
+                            Select a colour:
+                        </label>
+
+                        <input
+                            type="color"
+                            id="colour-picker"
+                            value="#ae5784">
+
+                        <button id="colour-button" type="button">
+                            Find matching colours
+                        </button>
+
+                    </div>
+
+                    <div id="colour-results">
+
+                        <div id="main-colour"></div>
+
+                        <h3>🧶 What is this colour called?</h3>
+                        <p id="colour-name"></p>
+
+                        <h3>🌈 Colours that work well together</h3>
+
+                        <div id="palette"></div>
+
+                    </div>
+
+                </div>
+
+        <script>
+
+            document.getElementById("colour-button").addEventListener("click", function () {
+
+            const colour =
+                document.getElementById("colour-picker")
+                .value
+                .replace("#", "");
+
+            fetch(`https://www.thecolorapi.com/id?hex=${colour}`)
+
+                .then(response => response.json())
+
+                .then(data => {
+
+                    document.getElementById("main-colour").style.backgroundColor =
+                        data.hex.value;
+
+                    document.getElementById("colour-name").textContent =
+                        data.name.value;
+
+                    return fetch(
+                        `https://www.thecolorapi.com/scheme?hex=${colour}&mode=analogic&count=4`
+                    );
+
+                })
+
+                .then(response => response.json())
+
+                .then(data => {
+
+                    const palette =
+                        document.getElementById("palette");
+
+                    palette.innerHTML = "";
+
+                    data.colors.forEach(colour => {
+
+                        const colourCard = document.createElement("div");
+                        colourCard.classList.add("colour-card");
+
+                        const swatch = document.createElement("div");
+                        swatch.classList.add("colour-swatch");
+                        swatch.style.backgroundColor = colour.hex.value;
+
+                        const label = document.createElement("p");
+                        label.classList.add("colour-label");
+                        label.textContent = colour.name.value;
+
+                        colourCard.appendChild(swatch);
+                        colourCard.appendChild(label);
+
+                        palette.appendChild(colourCard);
+
+                    });
+
+                })
+
+                .catch(error => {
+
+                    console.error(error);
+
+                    alert(
+                        "Unable to retrieve colour information."
+                    );
+
+                });
+
+            });
+
+        </script>
+
+
+        <div class="text-center mt-4">
+
+                <a href="index.html"
+                    class="btn home-button">
+
+                    Home
+
+                </a>
+
+            </div>                                                      
+
+        </div>
+    
+        <div class="mt-5 p-4 crochet-footer text-center">
+            <p>knotsoinnocent25 | Crocheting for the public since 2025</p>
+        </div>
+
+        <script src="bs-to-top.js"></script>
+        <script src="navbar.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    </body>
+
+</html>
